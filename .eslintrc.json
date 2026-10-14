@@ -1,0 +1,4 @@
+{
+  "extends": "next/core-web-vitals",
+  "ignorePatterns": ["filemyway-frontend-docs", "node_modules", ".next", "out"]
+}
