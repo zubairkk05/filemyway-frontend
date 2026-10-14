@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-ground text-ink font-sans text-body antialiased;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply font-display;
+  }
+
+  /* Visible focus ring on all controls (11). */
+  :focus-visible {
+    @apply outline-none ring-[3px] ring-ink ring-offset-[3px] ring-offset-ground;
+  }
+
+  ::selection {
+    background: #ffd84d;
+    color: #141414;
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-container px-4 sm:px-7;
+  }
+
+  .marker {
+    @apply bg-highlight px-1 box-decoration-clone;
+  }
+
+  .arrow-circle {
+    @apply flex h-12 w-12 shrink-0 items-center justify-center rounded-full border-2 border-ink text-ink transition-colors;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
